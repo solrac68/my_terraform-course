@@ -14,6 +14,16 @@ cat main.tf
 # plan and preview terraform changes
 terraform plan
 
+# Override variables
+terraform plan -var "resource_group_name=MY_RG"
+
+ + resource "azurerm_resource_group" "example" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "MY_RG"
+    }
+
+
 # deploy terraform infra
 terraform apply
 
