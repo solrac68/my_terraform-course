@@ -29,3 +29,10 @@ terraform apply
 
 # destroy infra
 terraform destroy
+
+
+# Outputs.tf
+λ terraform plan
+Changes to Outputs:
+  + webapp_ips = (known after apply)
+  + webapp_url = (known after apply)
