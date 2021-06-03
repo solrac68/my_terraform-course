@@ -1,0 +1,482 @@
+{
+    "format_version": "0.1",
+    "terraform_version": "0.15.4",
+    "variables": {
+        "app_service_name": {
+            "value": "terraform-demo-010"
+        },
+        "app_service_plan_name": {
+            "value": "example-appserviceplan"
+        },
+        "resource_group_location": {
+            "value": "East US"
+        },
+        "resource_group_name": {
+            "value": "example-resources"
+        }
+    },
+    "planned_values": {
+        "outputs": {
+            "webapp_ips": {
+                "sensitive": false
+            },
+            "webapp_url": {
+                "sensitive": false
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "azurerm_app_service.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                    "schema_version": 0,
+                    "values": {
+                        "app_settings": {
+                            "SOME_KEY": "some-value"
+                        },
+                        "backup": [],
+                        "client_affinity_enabled": false,
+                        "client_cert_enabled": false,
+                        "connection_string": [
+                            {
+                                "name": "Database",
+                                "type": "SQLServer",
+                                "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                            }
+                        ],
+                        "enabled": true,
+                        "https_only": false,
+                        "location": "eastus",
+                        "name": "terraform-demo-010",
+                        "resource_group_name": "example-resources",
+                        "site_config": [
+                            {
+                                "always_on": false,
+                                "app_command_line": null,
+                                "auto_swap_slot_name": null,
+                                "default_documents": null,
+                                "dotnet_framework_version": "v4.0",
+                                "health_check_path": null,
+                                "http2_enabled": false,
+                                "java_container": null,
+                                "java_container_version": null,
+                                "java_version": null,
+                                "php_version": null,
+                                "python_version": null,
+                                "remote_debugging_enabled": false,
+                                "scm_type": "LocalGit",
+                                "scm_use_main_ip_restriction": false,
+                                "use_32_bit_worker_process": null
+                            }
+                        ],
+                        "tags": null,
+                        "timeouts": null
+                    }
+                },
+                {
+                    "address": "azurerm_app_service_plan.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service_plan",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                    "schema_version": 0,
+                    "values": {
+                        "app_service_environment_id": null,
+                        "is_xenon": null,
+                        "kind": "Windows",
+                        "location": "eastus",
+                        "name": "example-appserviceplan",
+                        "per_site_scaling": null,
+                        "reserved": null,
+                        "resource_group_name": "example-resources",
+                        "sku": [
+                            {
+                                "size": "S1",
+                                "tier": "Standard"
+                            }
+                        ],
+                        "tags": null,
+                        "timeouts": null
+                    }
+                },
+                {
+                    "address": "azurerm_resource_group.example",
+                    "mode": "managed",
+                    "type": "azurerm_resource_group",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                    "schema_version": 0,
+                    "values": {
+                        "location": "eastus",
+                        "name": "example-resources",
+                        "tags": null,
+                        "timeouts": null
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "azurerm_app_service.example",
+            "mode": "managed",
+            "type": "azurerm_app_service",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "app_settings": {
+                        "SOME_KEY": "some-value"
+                    },
+                    "backup": [],
+                    "client_affinity_enabled": false,
+                    "client_cert_enabled": false,
+                    "connection_string": [
+                        {
+                            "name": "Database",
+                            "type": "SQLServer",
+                            "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                        }
+                    ],
+                    "enabled": true,
+                    "https_only": false,
+                    "location": "eastus",
+                    "name": "terraform-demo-010",
+                    "resource_group_name": "example-resources",
+                    "site_config": [
+                        {
+                            "always_on": false,
+                            "app_command_line": null,
+                            "auto_swap_slot_name": null,
+                            "default_documents": null,
+                            "dotnet_framework_version": "v4.0",
+                            "health_check_path": null,
+                            "http2_enabled": false,
+                            "java_container": null,
+                            "java_container_version": null,
+                            "java_version": null,
+                            "php_version": null,
+                            "python_version": null,
+                            "remote_debugging_enabled": false,
+                            "scm_type": "LocalGit",
+                            "scm_use_main_ip_restriction": false,
+                            "use_32_bit_worker_process": null
+                        }
+                    ],
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "app_service_plan_id": true,
+                    "app_settings": {},
+                    "auth_settings": true,
+                    "backup": [],
+                    "connection_string": [
+                        {}
+                    ],
+                    "default_site_hostname": true,
+                    "id": true,
+                    "identity": true,
+                    "logs": true,
+                    "outbound_ip_addresses": true,
+                    "possible_outbound_ip_addresses": true,
+                    "site_config": [
+                        {
+                            "cors": true,
+                            "ftps_state": true,
+                            "ip_restriction": true,
+                            "linux_fx_version": true,
+                            "local_mysql_enabled": true,
+                            "managed_pipeline_mode": true,
+                            "min_tls_version": true,
+                            "remote_debugging_version": true,
+                            "scm_ip_restriction": true,
+                            "websockets_enabled": true,
+                            "windows_fx_version": true
+                        }
+                    ],
+                    "site_credential": true,
+                    "source_control": true,
+                    "storage_account": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "app_settings": {},
+                    "auth_settings": [],
+                    "backup": [],
+                    "connection_string": true,
+                    "identity": [],
+                    "logs": [],
+                    "site_config": [
+                        {
+                            "cors": [],
+                            "ip_restriction": [],
+                            "scm_ip_restriction": []
+                        }
+                    ],
+                    "site_credential": [],
+                    "source_control": [],
+                    "storage_account": []
+                }
+            }
+        },
+        {
+            "address": "azurerm_app_service_plan.example",
+            "mode": "managed",
+            "type": "azurerm_app_service_plan",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "app_service_environment_id": null,
+                    "is_xenon": null,
+                    "kind": "Windows",
+                    "location": "eastus",
+                    "name": "example-appserviceplan",
+                    "per_site_scaling": null,
+                    "reserved": null,
+                    "resource_group_name": "example-resources",
+                    "sku": [
+                        {
+                            "size": "S1",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "id": true,
+                    "maximum_elastic_worker_count": true,
+                    "maximum_number_of_workers": true,
+                    "sku": [
+                        {
+                            "capacity": true
+                        }
+                    ]
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "sku": [
+                        {}
+                    ]
+                }
+            }
+        },
+        {
+            "address": "azurerm_resource_group.example",
+            "mode": "managed",
+            "type": "azurerm_resource_group",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "location": "eastus",
+                    "name": "example-resources",
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        }
+    ],
+    "output_changes": {
+        "webapp_ips": {
+            "actions": [
+                "create"
+            ],
+            "before": null,
+            "after_unknown": true,
+            "before_sensitive": false,
+            "after_sensitive": false
+        },
+        "webapp_url": {
+            "actions": [
+                "create"
+            ],
+            "before": null,
+            "after_unknown": true,
+            "before_sensitive": false,
+            "after_sensitive": false
+        }
+    },
+    "configuration": {
+        "provider_config": {
+            "azurerm": {
+                "name": "azurerm",
+                "version_constraint": "2.36.0",
+                "expressions": {
+                    "features": [
+                        {}
+                    ]
+                }
+            }
+        },
+        "root_module": {
+            "outputs": {
+                "webapp_ips": {
+                    "expression": {
+                        "references": [
+                            "azurerm_app_service.example"
+                        ]
+                    }
+                },
+                "webapp_url": {
+                    "expression": {
+                        "references": [
+                            "azurerm_app_service.example"
+                        ]
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "address": "azurerm_app_service.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service",
+                    "name": "example",
+                    "provider_config_key": "azurerm",
+                    "expressions": {
+                        "app_service_plan_id": {
+                            "references": [
+                                "azurerm_app_service_plan.example"
+                            ]
+                        },
+                        "app_settings": {
+                            "constant_value": {
+                                "SOME_KEY": "some-value"
+                            }
+                        },
+                        "connection_string": [
+                            {
+                                "name": {
+                                    "constant_value": "Database"
+                                },
+                                "type": {
+                                    "constant_value": "SQLServer"
+                                },
+                                "value": {
+                                    "constant_value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                                }
+                            }
+                        ],
+                        "location": {
+                            "references": [
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "name": {
+                            "references": [
+                                "var.app_service_name"
+                            ]
+                        },
+                        "resource_group_name": {
+                            "references": [
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "site_config": [
+                            {
+                                "dotnet_framework_version": {
+                                    "constant_value": "v4.0"
+                                },
+                                "scm_type": {
+                                    "constant_value": "LocalGit"
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "azurerm_app_service_plan.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service_plan",
+                    "name": "example",
+                    "provider_config_key": "azurerm",
+                    "expressions": {
+                        "location": {
+                            "references": [
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "name": {
+                            "references": [
+                                "var.app_service_plan_name"
+                            ]
+                        },
+                        "resource_group_name": {
+                            "references": [
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "sku": [
+                            {
+                                "size": {
+                                    "constant_value": "S1"
+                                },
+                                "tier": {
+                                    "constant_value": "Standard"
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "azurerm_resource_group.example",
+                    "mode": "managed",
+                    "type": "azurerm_resource_group",
+                    "name": "example",
+                    "provider_config_key": "azurerm",
+                    "expressions": {
+                        "location": {
+                            "references": [
+                                "var.resource_group_location"
+                            ]
+                        },
+                        "name": {
+                            "references": [
+                                "var.resource_group_name"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ],
+            "variables": {
+                "app_service_name": {
+                    "description": "App Service name in Azure"
+                },
+                "app_service_plan_name": {
+                    "description": "App Service Plan Service in Azure"
+                },
+                "resource_group_location": {
+                    "description": "RG location in azure"
+                },
+                "resource_group_name": {
+                    "description": "RG name in azure"
+                }
+            }
+        }
+    }
+}
