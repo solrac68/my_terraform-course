@@ -36,3 +36,8 @@ terraform destroy
 Changes to Outputs:
   + webapp_ips = (known after apply)
   + webapp_url = (known after apply)
+
+# 18. Execution plan demo
+terraform plan -out tfplan
+terraform show -json tfplan
+terraform show -json tfplan >> tfplan.json
